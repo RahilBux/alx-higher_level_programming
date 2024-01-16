@@ -5,6 +5,7 @@ def islower(c):
     else:
         return False
 
+
 def uppercase(str):
     convert = ord('a') - ord('A')
     for i in str:
