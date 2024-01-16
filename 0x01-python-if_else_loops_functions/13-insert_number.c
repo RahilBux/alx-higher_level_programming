@@ -4,7 +4,7 @@
  * insert_node - inserts a number in a linked list
  * @head: A pointer to the head
  * @number: number to insert
- * 
+ *
  * Return: 0 if failure or pointer to node
  */
 
