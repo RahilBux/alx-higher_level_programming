@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-for j in range(ord('z'), ord('a') - 1, -1):
-    if j % 2 == 0:
-        digi = 0
+for i in range(ord('z'), ord('a') - 1, -1):
+    if i % 2 == 0:
+        convert = 0
     else:
-        digi = 32
-    print("{}".format(chr(j - digi)), end="")
+        convert = ord('a') - ord('A')
+    print("{:c}".format(i - convert), end="")
