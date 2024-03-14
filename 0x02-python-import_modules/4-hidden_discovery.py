@@ -4,4 +4,4 @@ if __name__ == "__main__":
     every = dir()
     for i in range(0, len(every)):
         if every[i][:2] != "__":
-            print("{}".format(every[i]))
+            print("{:s}".format(every[i]))
