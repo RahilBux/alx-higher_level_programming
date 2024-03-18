@@ -34,6 +34,7 @@ void rev_listint(listint_t **head)
 listint_t *create_node(int data)
 {
 	listint_t *newnode = malloc(sizeof(listint_t));
+
 	if (newnode == NULL)
 	{
 		printf("Error allocating memory\n");
@@ -78,6 +79,7 @@ listint_t *dup_list(listint_t *original)
 void free_list(listint_t *head)
 {
 	listint_t *temp;
+
 	while (head != NULL)
 	{
 		temp = head;
@@ -98,6 +100,7 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 	listint_t *dup = dup_list(*head), *p1 = *head;
+
 	rev_listint(&dup);
 	listint_t *p2 = dup;
 
