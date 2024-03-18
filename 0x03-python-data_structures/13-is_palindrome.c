@@ -32,7 +32,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *s = *head, *f = *head, *temp = *head, *dup = NULL;
 
-	if (*head == NULL || *(head)->next == NULL)
+	if (*head == NULL)
 		return (1);
 
 	while (1)
