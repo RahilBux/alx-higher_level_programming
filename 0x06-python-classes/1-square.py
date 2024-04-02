@@ -5,7 +5,6 @@
 class Square:
     """A square"""
 
-
     def __init__(s, size):
         """Construct
         Args:
