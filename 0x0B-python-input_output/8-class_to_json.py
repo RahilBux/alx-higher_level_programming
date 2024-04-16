@@ -4,4 +4,4 @@
 
 def class_to_json(obj):
     """Return the dictionary rep of a data structure"""
-    return obj.__dict
+    return obj.__dict__
