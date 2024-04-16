@@ -3,7 +3,7 @@
 import json
 
 
-def my_json_string(my_str):
+def from_json_string(my_str):
     """Function that returns an object represented by JSON string
     args:
         my_str: object
