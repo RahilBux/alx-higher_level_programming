@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for add_item function"""
+"""Programme that adds all args as strings to a file"""
 import sys
 
 
