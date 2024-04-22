@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for class Base"""
 import json
+import csv
 
 
 class Base:
@@ -86,6 +87,55 @@ class Base:
 
                 for i in dict_list:
                     instance_list.append(cls.create(**i))
+                return instance_list
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes to CSV file"""
+        name = "{}.csv".format(cls.__name__)
+
+        with open(name, "w") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fname = ["id", "width", "height", "x", "y"]
+                else:
+                    fname = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=fname)
+
+            for i in list_objs:
+                writer.writerow(i.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a list of csv file"""
+        name = "{}.csv".format(cls.__name__)
+
+        try:
+            with open(name, "r") as f:
+                if cls.__name__ == "Rectangle":
+                    fname = ["id", "width", "height", "x", "y"]
+                else:
+                    fname = ["id", "size", "x", "y"]
+                dict_list = csv.DictReader(f, fieldnames=fname)
+
+                new_list_dict = []
+                convert_dict = {}
+
+                for i in dict_list:
+                    for key, value in i.items():
+                        convert_dict[key] = int(value)
+
+                    new_list_dict.append(convert_dict)
+                dict_list = new_list_dict
+
+                instance_list = []
+                for j in dict_list:
+                    instance_list.append(cls.create(**j))
+
                 return instance_list
         except FileNotFoundError:
             return []
