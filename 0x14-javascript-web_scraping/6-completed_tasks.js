@@ -14,9 +14,9 @@ request(url, function (err, data, body) {
       if (response[i].completed === true) {
         if (mydic[response[i].userId] === undefined) {
           mydic[response[i].userId] = 1;
-	} else {
+        } else {
           mydic[response[i].userId] += 1;
-	}
+        }
       }
     }
   }
